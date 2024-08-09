@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fetch API Methods</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f4f4f4;
+			}
+			#data-container {
+				margin: 20px;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+			}
+			.item {
+				background-color: #ffffff;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				padding: 15px;
+				width: calc(33% - 20px); /* Adjusts width for a 3-column layout */
+				box-sizing: border-box;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+			.item:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			}
+			.item h3 {
+				margin: 0;
+				font-size: 18px;
+				color: #333;
+			}
+			.item p {
+				margin: 10px 0;
+				color: #555;
+			}
+			.item button {
+				background-color: #e74c3c;
+				color: #fff;
+				border: none;
+				border-radius: 4px;
+				padding: 10px 15px;
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+			}
+			.item button:hover {
+				background-color: #c0392b;
+			}
+
+			#form-container {
+				margin: 20px;
+				padding: 15px;
+				background-color: #ffffff;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+			}
+			#form-container label {
+				display: block;
+				margin: 10px 0 5px;
+			}
+			#form-container input,
+			#form-container textarea {
+				width: 100%;
+				padding: 10px;
+				margin-bottom: 10px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+			}
+			#form-container button {
+				background-color: #3498db;
+				color: #fff;
+				border: none;
+				border-radius: 4px;
+				padding: 10px 15px;
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+			}
+			#form-container button:hover {
+				background-color: #2980b9;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Fetch GET, POST DELETE</h1>
+		<div id="form-container">
+			<h2>Create a New Post</h2>
+			<form id="post-form">
+				<label for="userId">User ID:</label>
+				<input type="text" id="userId" name="userId" required />
+
+				<label for="title">Title:</label>
+				<input type="text" id="title" name="title" required />
+
+				<label for="body">Body:</label>
+				<textarea id="body" name="body" rows="4" required></textarea>
+
+				<button type="submit">Create Post</button>
+			</form>
+		</div>
+		<button id="fetch-button">Fetch Posts</button>
+		<div id="data-container"></div>
+
+		<script src="index.js"></script>
+	</body>
+</html>
